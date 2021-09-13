@@ -26,9 +26,9 @@ import org.springframework.web.server.ResponseStatusException;
 @RestController
 public class ContactController {
 
-    private ContactService contactService;
+    private final ContactService contactService;
 
-    private ModelMapper modelMapper;
+    private final ModelMapper modelMapper;
 
     @Autowired
     public ContactController(ContactService contactService, ModelMapper modelMapper) {
@@ -58,7 +58,7 @@ public class ContactController {
         if (contactOptional.isEmpty()) {
             throw new ResponseStatusException(
                     HttpStatus.NOT_FOUND,
-                    String.format("Contact with id = %s cannot be found", contactId));
+                    String.format("Contact with id = %d cannot be found", contactId));
         }
 
         return modelMapper.map(contactOptional.get(), ContactDto.class);

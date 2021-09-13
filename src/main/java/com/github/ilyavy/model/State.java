@@ -27,4 +27,22 @@ public class State {
         this.state = state;
         return this;
     }
+
+    public Long getId() {
+        return id;
+    }
+
+    public State setId(Long id) {
+        this.id = id;
+        return this;
+    }
+
+    public Contact getContact() {
+        return contact;
+    }
+
+    public State setContact(Contact contact) {
+        this.contact = contact;
+        return this;
+    }
 }

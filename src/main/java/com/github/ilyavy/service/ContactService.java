@@ -12,7 +12,7 @@ import org.springframework.stereotype.Service;
 @Service
 public class ContactService {
 
-    private ContactRepository contactRepository;
+    private final ContactRepository contactRepository;
 
     @Autowired
     public ContactService(ContactRepository contactRepository) {
