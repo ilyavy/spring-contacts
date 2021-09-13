@@ -3,6 +3,7 @@ package com.github.ilyavy.service;
 import java.util.Optional;
 
 import com.github.ilyavy.model.State;
+import com.github.ilyavy.model.StateType;
 import com.github.ilyavy.repository.ContactRepository;
 import com.github.ilyavy.repository.StateRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -52,5 +53,9 @@ public class StateService {
 
         state.setId(stateId);
         return stateRepository.save(state);
+    }
+
+    public long countByState(StateType stateType) {
+        return stateRepository.countStatesByState(stateType);
     }
 }
